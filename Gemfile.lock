@@ -87,6 +87,11 @@ GEM
     roo (2.7.1)
       nokogiri (~> 1)
       rubyzip (~> 1.1, < 2.0.0)
+    roo-xls (1.2.0)
+      nokogiri
+      roo (>= 2.0.0, < 3)
+      spreadsheet (> 0.9.0)
+    ruby-ole (1.2.12.1)
     rubyzip (1.2.1)
     sass (3.2.19)
     sass-rails (4.0.5)
@@ -97,6 +102,8 @@ GEM
     sdoc (0.4.2)
       json (~> 1.7, >= 1.7.7)
       rdoc (~> 4.0)
+    spreadsheet (1.1.7)
+      ruby-ole (>= 1.0)
     spring (1.7.2)
     sprockets (2.12.4)
       hike (~> 1.2)
@@ -132,8 +139,10 @@ DEPENDENCIES
   pry
   rails (= 4.1.1)
   roo
+  roo-xls
   sass-rails (~> 4.0.3)
   sdoc (~> 0.4.0)
+  spreadsheet
   spring
   sqlite3
   turbolinks

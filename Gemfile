@@ -38,4 +38,7 @@ gem 'spring',        group: :development
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 gem 'roo'
+#Generador excel
+gem 'spreadsheet'
 gem 'pry'
+gem 'roo-xls'
