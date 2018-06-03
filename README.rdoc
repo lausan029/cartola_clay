@@ -2,29 +2,27 @@
 
 Cartola clay, 
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Proyecto cartola_clay, tiene como finalidad obtener una cartola completamente limpia y sin repeticiones.
+La cartola correcta se obtiene de los archivos que se deben cargar uno a uno
+y a medida que se cargar se van validado.
 
 Things you may want to cover:
 
 * Ruby version
+	<tt>2.2.1</tt>
 
-* System dependencies
+* Rails version
+	<tt>4.1.1</tt>
 
-* Configuration
+* How to run
+	<tt>rails s (default port 3000)</tt>
 
-* Database creation
+	or 
 
-* Database initialization
+	<tt>rails server</tt>
 
-* How to run the test suite
+* Change port
 
-* Services (job queues, cache servers, search engines, etc.)
+	<tt>rails s -p xxxx</tt>
 
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
 <tt>rake doc:app</tt>.
