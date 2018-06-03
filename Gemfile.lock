@@ -65,6 +65,7 @@ GEM
     multi_json (1.13.1)
     nokogiri (1.8.2)
       mini_portile2 (~> 2.3.0)
+    pg (0.21.0)
     polyglot (0.3.5)
     pry (0.11.3)
       coderay (~> 1.1.0)
@@ -147,6 +148,7 @@ DEPENDENCIES
   coffee-rails (~> 4.0.0)
   jbuilder (~> 2.0)
   jquery-rails
+  pg (~> 0.21)
   pry
   rails (= 4.1.1)
   rails_12factor
