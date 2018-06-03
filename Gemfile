@@ -42,3 +42,4 @@ gem 'roo'
 gem 'spreadsheet'
 gem 'pry'
 gem 'roo-xls'
+gem 'rails_12factor', group: :production
