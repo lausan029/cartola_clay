@@ -23,7 +23,7 @@ class CartolaController < ApplicationController
           create_movement(movements)
         end
       return render json: {status: true}
-    rescue Exception => e  
+    rescue Exception => e
       puts e
       return false
     end
@@ -37,24 +37,46 @@ class CartolaController < ApplicationController
     begin  
       export_file_path = [Rails.root, "public", "cartola_correcta.xls"].join("/")
       movements_old = Roo::Spreadsheet.open(export_file_path, extension: :xls)
-      #movements_old = Spreadsheet.open(export_file_path)
 
-      binding.pry
-      return render json: {status: true, header: sheet1}
-    rescue Exception => e 
+      book = Spreadsheet::Workbook.new
+      sheet1 = book.create_worksheet :name => 'cartola_correcta'
+      count = 0
+      (1..movements.last_row).each do |i|
+        (1..movements_old.last_row).each do |r|
+          (1..movements.last_row).each do |rw|
+            if movements_old.row(r) == movements.row(rw)
+              sheet1.row(count).replace movements.row(i)
+            else
+              if (movements_old.row(r).last.to_i == movements.row(rw).last) and (movements_old.row(r).first != movements.row(r).first)
+                sheet1.row(count).replace movements.row(i)
+              else
+                sheet1.row(count).replace movements.row(i)
+              end
+            end
+          end
+        end
+        count = count + 1
+      end
+
+      export_file_path = [Rails.root, "public", "cartola_correcta.xls"].join("/")
+      book.write export_file_path
+      #send_file export_file_path, :content_type => "application/vnd.ms-excel", :disposition => 'inline'
+
+      return render json: {status: true}
+    rescue Exception => e
       puts e
       return render json: {status: false}
     end
-  end 
+  end
 
   # Summary: Creacion de cartola correcta
   #
   # Params:
-  # Return:  
+  # Return:
   def create_movement movements
-    begin  
+    begin
       header = movements.row(1)
-      book = Spreadsheet::Workbook.new 
+      book = Spreadsheet::Workbook.new
       sheet1 = book.create_worksheet :name => 'cartola_correcta'
       sheet1.row(0).replace header
       count = 0
@@ -68,7 +90,7 @@ class CartolaController < ApplicationController
       send_file export_file_path, :content_type => "application/vnd.ms-excel", :disposition => 'inline'
 
       return render json: {status: true, header: sheet1}
-    rescue Exception => e 
+    rescue Exception => e
       puts e
       return render json: {status: false}
     end
