@@ -3,26 +3,23 @@
 Cartola clay, 
 
 Proyecto cartola_clay, tiene como finalidad obtener una cartola completamente limpia y sin repeticiones.
-La cartola correcta se obtiene de los archivos que se deben cargar uno a uno
-y a medida que se cargar se van validado.
+La cartola correcta se obtiene de los archivos que se cargan uno a uno y a medida que se cargar se van validando.
 
 Things you may want to cover:
 
 * Ruby version
-	<tt>2.2.1</tt>
+<tt>2.2.1</tt>
 
 * Rails version
-	<tt>4.1.1</tt>
+<tt>4.1.1</tt>
 
 * How to run
-	<tt>rails s (default port 3000)</tt>
+<tt>rails s (default port 3000)</tt>
 
-	or 
+or
 
-	<tt>rails server</tt>
+<tt>rails server</tt>
 
 * Change port
 
-	<tt>rails s -p xxxx</tt>
-
-<tt>rake doc:app</tt>.
+<tt>rails s -p xxxx</tt>
